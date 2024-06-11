@@ -1,3 +1,4 @@
+[本次部署使用了蛋老师的配置视](https://www.bilibili.com/video/BV1Td4y1578E/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=3268ce5f8f29db48f5c4973357c7dfad)
 > project view
 
 插件管理:packer / Lazy
