@@ -64,6 +64,9 @@ nvim-ts-rainbow的问题 与 bufferline的冲突问题
 -- https://github.com/neovim/neovim/issues/28084
 
 需要将旧版本的rainbow更换为HiPhish/nvim-ts-rainbow2
+
+-- 但是 ！！！BUT！
+HiPhish/nvim-ts-rainbow2会导致插件(nvim-treesitter、rainbow2等)在Lazy管理下，加载时间很长
 ```
 
 ### 字体显示问题
@@ -83,5 +86,4 @@ nvim-ts-rainbow的问题 与 bufferline的冲突问题
 将"help"更改为 "vimdoc" 
 即原文将变成 ensure_installed = { "vim", "vimdoc", ...}
 ```
-
 
