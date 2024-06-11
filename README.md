@@ -42,12 +42,53 @@ local plugins = {
 
 ```
 
+## 插件安装
+
+> 一般安装方法
+
+```lua
+在通过包管理器安装后，一部分插件可直接使用，但一般插件还需要进行一定配置
+-- 配置
+将配置文件放在xxx.lua中 ,并在init.lua中引用
+
+安装插件一般流程
+-- 在包管理中安装
+-- 补充配置文件
+-- 在init.lua中引用配置文件
+```
+
 ## 插件的使用
 
 Lsp Mason的用法
 
 ```lua
 :Mason
+-- 寻找需要的LSP，按I安装
+-- 在配置文件(lsp.lua)中添加启动配置代码
+
+例:
+Pyright:
+- :Mason
+- 找到Pyright,按i安装
+- 修改lsp.lua文件
+--[[
+require("lspconfig").pyright.setup {
+  capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true,
+        typeCheckingMode = "off",
+      }
+    }
+  },
+}
+--]]
+
+
+- 重新加载后即可正常使用
 ```
 
 
@@ -85,5 +126,23 @@ HiPhish/nvim-ts-rainbow2会导致插件(nvim-treesitter、rainbow2等)在Lazy管
 显示为 没有"help"的parser
 将"help"更改为 "vimdoc" 
 即原文将变成 ensure_installed = { "vim", "vimdoc", ...}
+```
+
+### clipboard 问题
+
+```shell
+通过:checkhealth找到问题
+## Clipboard (optional)
+  - WARNING: No clipboard tool found. Clipboard registers (`"+` and `"*`) will not work.
+    - ADVICE:
+      - :help clipboard
+
+# 详细帖子 https://github.com/neovide/neovide/issues/544
+
+# 解决方案: 安装win32yank.exe
+curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe /usr/local/bin/
 ```
 
