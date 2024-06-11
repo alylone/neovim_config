@@ -143,6 +143,6 @@ HiPhish/nvim-ts-rainbow2会导致插件(nvim-treesitter、rainbow2等)在Lazy管
 curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
 unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
 chmod +x /tmp/win32yank.exe
-sudo mv /tmp/win32yank.exe /usr/local/bin/
+sudo mv /tmp/win32yank.exe /usr/local/bin/ # 将win32yank.exe放在环境变量中即可 $PATH
 ```
 
