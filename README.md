@@ -146,3 +146,10 @@ chmod +x /tmp/win32yank.exe
 sudo mv /tmp/win32yank.exe /usr/local/bin/ # 将win32yank.exe放在环境变量中即可 $PATH
 ```
 
+### telescope一片空白
+
+```lua
+-- 环境要求安装ripgrep
+sudo apt install ripgrep
+```
+
